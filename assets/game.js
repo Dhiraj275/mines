@@ -78,7 +78,7 @@ const generateGame = ({ mines }) => {
 const cashOut = () => {
     selectors.cashout.style.display = "block";
     selectors.profitMultiplier.innerText = `${state.totatProfit}x`;
-    selectors.totalProfit.innerText = `₹ ${state.battingAmount * state.totatProfit}`;
+    selectors.totalProfit.innerText = `₹ ${(state.totatProfit * state.battingAmount).toFixed(2)}`;
     //game over script
     state.gameOver = true
     state.gameStarted = false
@@ -142,7 +142,7 @@ const flipCard = async card => {
         state.totatProfit = calculateProfitMultiplier(state.mines, state.flippedCards)
         selectors.profit.innerText = state.totatProfit
         selectors.start.disabled = false
-        document.getElementById("total_profit").value = state.totatProfit * state.battingAmount
+        document.getElementById("total_profit").value = (state.totatProfit * state.battingAmount).toFixed(2)
     }
     // If there are no more cards that we can flip, we won the game
     if (!document.querySelectorAll('.card:not(.flipped)').length) {
