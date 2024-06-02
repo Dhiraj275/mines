@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juwari</title>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/game.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="game">
+            <div class="controls">
+                <div class="stats">
+                    <div class="form-control">
+                        <label for="bet_amount">Bet Amount</label>
+                        <input type="number" value="0" name="bet_amount" id="bet_amount">
+                    </div>
+                    <div class="form-control mines">
+                        <label for="mines">Mines</label>
+                        <select name="mines" id="mines">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                        </select>
+                    </div>
+                    <div class="game-stats">
+                        <div class="form-control">
+                            <label for="total_profit">Total Profit (<span id="profit">1.00</span>x)</label>
+                            <input type="number" name="total_profit" id="total_profit">
+                        </div>
+                    </div>
+                    <button onclick="handleBet()">Bet</button>
+                </div>
+            </div>
+            <div class="game-sec">
+                <div class="board-container">
+                    <div class="board" data-dimension="5"></div>
+                </div>
+                <div style="display: none;" id="cashout">
+                    <h3 id="profit-multiplier">
+                        1x
+                    </h3>
+                    <h4 id="total-profit">₹ 1</h4>
+                </div>
+                <div style="display: none;" id="lost">
+                    <h3 id="profit-multiplier">
+                        You Lost
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
